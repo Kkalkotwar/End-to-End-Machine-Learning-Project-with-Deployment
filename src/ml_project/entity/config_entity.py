@@ -13,3 +13,12 @@ class DataIngestionConfig:
     source_URL: str
     local_data_file: Path
     unzip_dir: Path
+
+@dataclass(frozen=True)
+class DataValidationConfig:
+    """Data Validation Configuration"""
+    # Define the attributes of the class
+    root_dir: Path
+    unzip_data_dir: Path
+    STATUS_FILE: Path
+    all_schema: dict # Define the schema for the data validation

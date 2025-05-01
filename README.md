@@ -9,7 +9,7 @@ This is the Repository which contains End-to-End Machine Learning Project Workfl
 3. Update params.yaml    ------> We will be writing all the parameters we wil be using in our project.
                                  Let's say values like "α" , "β" , "γ" which might be used in our process code. 
 4. Update the entity     ------> Updating the config_entity.py file in src folder
-5. Update the configuration manager in src config -----> Inside the src.config folder
+5. Update the configuration manager in src config -----> Inside the src.config folder ["Configuration.py" file]
 6. Update the components ------> Components like "Data Ingestion", "Data Validation", "Data Transformation"...etc. 
 7. Update the pipeline   ------> Update and adding the pipeline. Basically integrating all the components with
                                  pipeline {Training pipeline separate and prediction pipeline separate}.

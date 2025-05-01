@@ -1,6 +1,7 @@
 from ml_project.constants import *
 from ml_project.utils.common import read_yaml, create_directories
 from ml_project.entity.config_entity import DataIngestionConfig
+from ml_project.entity.config_entity import DataValidationConfig
 
 
 
@@ -23,6 +24,8 @@ class ConfigurationManager:
         # Create directories for artifacts and data ingestion
         create_directories([self.config.artifacts_root])  # Create the artifacts root directory
 
+
+    # Data Ingestion Configuration
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         """Get Data Ingestion Configuration"""
         config = self.config.data_ingestion
@@ -35,3 +38,18 @@ class ConfigurationManager:
             unzip_dir=config.unzip_dir
         )
         return data_ingestion_config
+    
+    # Data Validation Configuration
+    def get_data_validation_config(self) -> DataValidationConfig:
+        """Get Data Validation Configuration"""
+        config = self.config.data_validation
+        schema = self.schema.COLUMNS
+        create_directories([config.root_dir])  # Create the data ingestion root directory
+
+        data_validation_config = DataValidationConfig(
+            root_dir=config.root_dir,
+            unzip_data_dir=config.unzip_data_dir,
+            STATUS_FILE=config.STATUS_FILE,
+            all_schema=schema
+        )
+        return data_validation_config

@@ -31,11 +31,11 @@ class DataValidation:
                     if actual_dtypes != expected_dtypes:
                         validation_status = False
                         with open(self.config.STATUS_FILE, "w") as f:
-                            f.write(f"Column {column} data type mismatch: expected {expected_dtypes}, got {actual_dtypes}\n")
+                            f.write(f"Validation Status: {validation_status}")
                     else:
                         validation_status = True
                         with open(self.config.STATUS_FILE, "w") as f:
-                            f.write(f"All necessary columns are in the schema and data type matches\n")
+                            f.write(f"Validation Status: {validation_status}")
 
             return validation_status
 

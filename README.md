@@ -17,3 +17,80 @@ This is the Repository which contains End-to-End Machine Learning Project Workfl
 9. Update the app.py     ------> Inside app.py we will be writing the UI related functionality, and integrate this
                                  main.py with app.py {User will run the app.py and it will run all the code.}
 
+
+
+
+
+
+# How to run?
+### STEPS:
+
+Clone the repository
+
+```bash
+https://github.com/Kkalkotwar/End-to-End-Machine-Learning-Project-with-Deployment.git
+```
+### STEP 01- Create a conda environment after opening the repository
+
+```bash
+conda create -n mlproj python=3.8 -y
+or 
+python -m venv {environment_name}
+```
+
+```bash
+conda activate mlproj
+or
+activate the venv by coping the relative path of activate file {.venv\Scripts\activate}
+```
+
+
+### STEP 02- install the requirements
+```bash
+pip install -r requirements.txt
+```
+
+
+```bash
+# Finally run the following command
+python app.py
+```
+
+Now,
+```bash
+open up you local host and port
+```
+
+
+
+## MLflow
+
+[Documentation](https://mlflow.org/docs/latest/index.html)
+
+
+##### cmd
+- mlflow ui
+
+### dagshub
+[dagshub](https://dagshub.com/)
+### Using MLFlow tracking from Remote/Experiments of dagshub page.
+
+import dagshub
+dagshub.init(repo_owner='kunalkalkotwar21', repo_name='End-to-End-Machine-Learning-Project-with-Deployment', mlflow=True)
+
+import mlflow
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
+
+Run this to export as env variables:
+
+```bash
+
+export MLFLOW_TRACKING_URI=https://dagshub.com/kunalkalkotwar21/End-to-End-Machine-Learning-Project-with-Deployment.mlflow
+
+export MLFLOW_TRACKING_USERNAME=kunalkalkotwar21 
+
+export MLFLOW_TRACKING_PASSWORD=e493d450b8e9059d8c01a75ebb5b404bb27528b1
+
+```

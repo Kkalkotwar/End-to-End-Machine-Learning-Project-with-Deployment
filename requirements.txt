@@ -16,4 +16,5 @@ Flask
 Flask-Cors
 notebook
 jupyter
+python-dotenv
 -e .

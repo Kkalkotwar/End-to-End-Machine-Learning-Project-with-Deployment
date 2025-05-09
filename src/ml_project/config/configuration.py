@@ -1,9 +1,12 @@
+import os
 from ml_project.constants import *
 from ml_project.utils.common import read_yaml, create_directories
+from ml_project.utils.load_env import load_environment_variables
 from ml_project.entity.config_entity import (DataIngestionConfig,
                                              DataValidationConfig,
                                              DataTransformationConfig,
-                                             ModelTrainerConfig)
+                                             ModelTrainerConfig,
+                                             ModelEvaluationConfig)
 
 
 class ConfigurationManager:
@@ -88,3 +91,26 @@ class ConfigurationManager:
         )
         
         return model_trainer_config
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        """Get Model Evaluation Configuration"""
+
+        # Load env variables before using
+        load_environment_variables()
+
+
+        config = self.config.model_evaluation
+        params = self.params.ElasticNet
+        schema = self.schema.TARGET_COLUMN["name"]
+        
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir = config.root_dir,
+            model_path = config.model_path,
+            test_data_path = config.test_data_path,
+            report_path = config.report_path,
+            all_param = params,
+            target_column = schema,
+            mlflow_tracking_uri = os.getenv("MLFLOW_TRACKING_URI")  # From .env
+            )
+        
+        return model_evaluation_config

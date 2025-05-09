@@ -42,3 +42,16 @@ class ModelTrainerConfig:
     l1_ratio: float
     random_state: int
     target_column: str
+
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    """Model Evaluation Configuration"""
+    # Define the attributes of the class
+    root_dir: Path
+    model_path: Path
+    test_data_path: Path
+    report_path: Path
+    all_param: dict
+    target_column: str
+    mlflow_tracking_uri: str

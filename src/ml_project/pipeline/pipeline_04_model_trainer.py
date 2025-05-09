@@ -1,5 +1,4 @@
 from ml_project import logger
-from pathlib import Path
 from ml_project.config.configuration import ConfigurationManager
 from ml_project.components.model_trainer import ModelTrainer
 

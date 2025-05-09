@@ -61,6 +61,7 @@ def save_json(path: Path, data: dict):
         path (Path): path to json file
         data (dict): data to be saved in json file
     """
+    path.parent.mkdir(parents=True, exist_ok=True)  # <-- This line ensures the directory exists
     with open(path, "w") as f:
         json.dump(data, f, indent=4)
 

@@ -75,14 +75,6 @@ open up you local host and port
 [dagshub](https://dagshub.com/)
 ### Using MLFlow tracking from Remote/Experiments of dagshub page.
 
-import dagshub
-dagshub.init(repo_owner='kunalkalkotwar21', repo_name='End-to-End-Machine-Learning-Project-with-Deployment', mlflow=True)
-
-import mlflow
-with mlflow.start_run():
-  mlflow.log_param('parameter name', 'value')
-  mlflow.log_metric('metric name', 1)
-
 Run this to export as env variables:
 
 ```bash
@@ -129,7 +121,7 @@ export MLFLOW_TRACKING_PASSWORD= *Your Tracking Password*
 
 	
 ## 3. Create ECR repo to store/save docker image
-    - Save the URI: 566373416292.dkr.ecr.ap-south-1.amazonaws.com/mlproj
+    - Save the URI: (Your ECR Repository URI)
 
 	
 ## 4. Create EC2 machine (Ubuntu) 
@@ -141,7 +133,7 @@ export MLFLOW_TRACKING_PASSWORD= *Your Tracking Password*
 
 	sudo apt-get update -y
 
-	sudo apt-get upgrade
+	sudo apt-get upgrade -y
 	
 	#required
 
@@ -165,9 +157,9 @@ export MLFLOW_TRACKING_PASSWORD= *Your Tracking Password*
 
     AWS_REGION = us-east-1
 
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
+    AWS_ECR_LOGIN_URI = demo>>  (Only http link till amazon.com)
 
-    ECR_REPOSITORY_NAME = simple-app
+    ECR_REPOSITORY_NAME = (Your ECR Repo name)
 
 
 

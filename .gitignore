@@ -176,3 +176,4 @@ cython_debug/
 artifacts/*
 .env
 kkk92877_mlproj_user_accessKeys.csv
+ml_project_key_pair.ppk

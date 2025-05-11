@@ -33,7 +33,7 @@ https://github.com/Kkalkotwar/End-to-End-Machine-Learning-Project-with-Deploymen
 ### STEP 01- Create a conda environment after opening the repository
 
 ```bash
-conda create -n mlproj python=3.8 -y
+conda create -n ml_project python=3.8 -y
 or 
 python -m venv {environment_name}
 ```

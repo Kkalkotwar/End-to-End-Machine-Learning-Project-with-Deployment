@@ -1,4 +1,4 @@
 ElasticNet:
-  alpha: 0.005
+  alpha: 0.004
   l1_ratio: 0.4
   random_state: 42
